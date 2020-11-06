@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<form  method="post" enctype="multipart/form-data"> <!-- this line requered, otherwise your form won't take a photo -->
+    {% csrf_token %}
+    <table>
+        {{ form.as_p }}
+    </table>
+
+    <input type="submit" name="update" value="upload">
+    <input type="submit" name="cancel" value="cancel">
+</form>
+
+
+</body>
+</html>
