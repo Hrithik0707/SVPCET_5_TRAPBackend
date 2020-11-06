@@ -1,16 +1,15 @@
 from django.db import models
 
-class Poll_on_offensive(models.Model):
+class PollOffensive(models.Model):
     # Sentence which is offensive
-    offensive_sentence = models.Charfield(max_length=400),
-    sentence_id = models.Charfield(max_length=100),
+    offensive_sentence = models.CharField(max_length=400,blank=True,null=True),
     # no. of users voting yes or no
     vote_yes = models.IntegerField(blank=True,null=True),
     vote_no = models.IntegerField(blank=True,null=True),
     # will store mobile no. of the user started poll
-    user_polled = models.IntegerField(blank=True,null=True)
+    user_polled = models.IntegerField(blank=True,null=True),
     # List of users polled
-    voter_pole = models.TextField()
+    voter_pole = models.TextField(blank=True,null=True)
 
     def __str__(self):
         return str(self.offensive_sentence) 
