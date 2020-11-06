@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 from .forms import PollForm
 
@@ -7,12 +7,13 @@ def create_poll(request):
     if request.method=='POST':
            
         # Accepting data changes from Profile form
-        form = PollForm(request.POST) 
-        
+        form = PollForm(request.POST)  
         # Check - If the form is valid
         if form.is_valid(): 
             form.save()
             return redirect('/')
-    return render(request, 'create_a_poll.html', {'form' : form}) 
+    else:
+        form = PollForm()
+        return render(request, 'offensive/create_a_poll.html', {'form' : form}) 
 
     
