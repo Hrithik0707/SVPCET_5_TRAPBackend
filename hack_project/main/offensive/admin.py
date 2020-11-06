@@ -1,3 +1,5 @@
 from django.contrib import admin
+from .models import PollOffensive
 
-# Register your models here.
+# Model registration of User Model
+admin.site.register(PollOffensive)

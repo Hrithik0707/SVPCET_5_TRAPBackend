@@ -1,5 +1,5 @@
 from django.shortcuts import render
-"""
+
 from .forms import PollForm
 
 # Create your views here.
@@ -14,5 +14,5 @@ def create_poll(request):
             form.save()
             return redirect('/')
     return render(request, 'create_a_poll.html', {'form' : form}) 
-    """
+
     
