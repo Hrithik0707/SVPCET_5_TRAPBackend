@@ -13,7 +13,7 @@ def create_poll(request):
         # Check - If the form is valid
         if form.is_valid(): 
             form.save()
-            return redirect('/')
+            return redirect('list_polls')
     else:
         form = PollForm()
         return render(request, 'offensive/create_a_poll.html', {'form' : form}) 
@@ -40,6 +40,7 @@ def vote_poll(request):
             vote_count = voting.vote_no
             voting.vote_no = vote_count+1
         # getting all the posts 
-        Posts = Product.objects.filter(product_category=category)  
-        return render(request, 'product_category.html',{'shop_images' : Posts,'category':category})
+        list=PollOffensive.objects.all();
+
+        return render(request, 'offensive/list_polls.html',{'page_obj' : list})
     
