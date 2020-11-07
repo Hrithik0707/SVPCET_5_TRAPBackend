@@ -1,4 +1,5 @@
 from django.db import models
+from accounts.models import User
 
 class PollOffensive(models.Model):
     # Sentence which is offensive
@@ -7,7 +8,7 @@ class PollOffensive(models.Model):
     vote_yes = models.IntegerField(blank=True,null=True),
     vote_no = models.IntegerField(blank=True,null=True),
     # will store mobile no. of the user started poll
-    user_polled = models.IntegerField(blank=True,null=True),
+    user=models.ForeignKey( User,on_delete=models.CASCADE),
     # List of users polled
     voter_pole = models.TextField(blank=True,null=True)
 
