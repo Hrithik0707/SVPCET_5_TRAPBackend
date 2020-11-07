@@ -7,7 +7,7 @@ from .forms import PollForm
 def create_poll(request):
     if request.method=='POST':
            
-        # Accepting data changes from Profile form
+        #Accepting data changes from Profile form
         form = PollForm(request.POST)  
         # Check - If the form is valid
         if form.is_valid(): 
