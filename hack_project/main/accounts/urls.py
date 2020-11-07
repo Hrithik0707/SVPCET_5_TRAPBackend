@@ -5,10 +5,9 @@ from django.conf.urls.static import static
 
 
 urlpatterns=[
-    # path for home page
-    path('',views.index,name='index'),
+   
     # path for registration page
-    path('register',views.register,name='register'),
+    path('',views.register,name='register'),
     # path for login page
     path('login',views.login,name='login'),
     # path for loging out
