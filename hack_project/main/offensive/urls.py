@@ -6,7 +6,8 @@ from django.conf.urls.static import static
 
 urlpatterns=[
     # path for home page
-    path('create_poll/',views.create_poll,name='create')
+    path('create_poll/',views.create_poll,name='create'),
+    path('list_polls/',views.list_of_polls,name='list')
 
 ]
 

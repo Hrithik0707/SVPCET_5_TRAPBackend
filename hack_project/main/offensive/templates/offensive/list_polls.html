@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    {% for obj in page_obj %} 
+          <div class="col-lg-3 col-md-6">
+            <div class="service-box" style="background: #C3C3E5; color:black;">
+              
+              
+              <div class="service-content">
+              	<br>
+                <h2 class="s-title" style=" color:black;"> {{ obj.offensive_sentence }} </h2>
+               
+                <h3 class="s-title" style="color:black;">{{ obj.vote_yes }} </h3> 
+                <h3 class="s-title" style="color:black;">{{ obj.vote_no }} </h3> 
+                <form  method="POST" >
+                  {% csrf_token %}
+                  
+                  <input type="hidden" value="{{ obj.offensive_sentence }}" name="sentence"/>
+                  <input type="hidden" value="yes" name="vote"/>
+                  <button type="submit"  class="button_dis"> Yes </button>
+                </form>
+                <form  method="POST" >
+                  {% csrf_token %}
+                  
+                  <input type="hidden" value="{{ obj.offensive_sentence }}" name="sentence"/>
+                  <input type="hidden" value="no" name="vote"/>
+                  <button type="submit"  class="button_dis"> No </button>
+                </form>
+                
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+
+</body>
+</html>
