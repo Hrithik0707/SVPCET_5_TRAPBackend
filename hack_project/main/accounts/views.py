@@ -64,7 +64,7 @@ def login(request):
         # Check - If the user exists
         if user is not None:
             auth.login(request,user)
-            return redirect('accounts/')
+            return redirect('classify')
         else:
             messages.info(request,'invalid credentials')
             return HttpResponse("invalid credentials")

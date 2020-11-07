@@ -3,6 +3,7 @@ from accounts.models import User
 
 class PollOffensive(models.Model):
     # Sentence which is offensive
+    user=models.ForeignKey( User,on_delete=models.CASCADE)
     offensive_sentence = models.CharField(max_length=400,blank=True,null=True)
     # no. of users voting yes or no
     vote_yes = models.IntegerField(blank=True,null=True)

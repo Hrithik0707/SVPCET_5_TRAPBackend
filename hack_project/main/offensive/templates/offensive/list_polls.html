@@ -19,18 +19,18 @@
                
                 <h3 class="s-title" style="color:black;">{{ obj.vote_yes }} </h3> 
                 <h3 class="s-title" style="color:black;">{{ obj.vote_no }} </h3> 
-                <form  method="POST" action="vote">
+                <form  method="POST" >
                   {% csrf_token %}
                   
-                  <input type="hidden" value="{{ obj.offensive_sentence }}" name="sentence"/>
-                  <input type="hidden" value="{{ obj.vote_yes }}" name="vote_count"/>
+                  <input type="hidden" value="{{ obj.id }}" name="sentence"/>
+                  <input type="hidden" value="yes" name="vote"/>
                   <button type="submit"  class="button_dis"> Yes </button>
                 </form>
-                <form  method="POST" action="vote">
+                <form  method="POST">
                   {% csrf_token %}
                   
-                  <input type="hidden" value="{{ obj.offensive_sentence }}" name="sentence"/>
-                  <input type="hidden" value="{{ obj.vote_no }}" name="vote_count"/>
+                  <input type="hidden" value="{{ obj.id }}" name="sentence"/>
+                  <input type="hidden" value="no" name="vote"/>
                   <button type="submit"  class="button_dis"> No </button>
                 </form>
                 
