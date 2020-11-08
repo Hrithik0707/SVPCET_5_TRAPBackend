@@ -54,7 +54,7 @@ def classify(request):
         t_reviews = [tkn.convert_tokens_to_ids(tkn.tokenize(text))]
         a = pad_sequences(t_reviews, maxlen=64, dtype='int32', padding='pre', truncating='pre',value=0)
         print(a)
-        return redirect('resneg')
+        return redirect('respos')
         model = models.load_model('main/offensive/model')
         score = model.predict(a)
         if score>0.85:
