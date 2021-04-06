@@ -1,10 +1,5 @@
 # SVPCET-Hackathon-TRAPBackend-05
- Project submitted under SVPCET Virtual Hackathon.
-## Team Members:
-1.	Toshnav Khatke
-2.	Ritik Thool
-3.	Avnee Jadhav
-4.	Parimal Padhye
+ Project submitted under SVPCET Virtual Hackathon. Ji
 
 # Problem Statement
 Using technology to bully is a problem that is on the rise which can lead to the decreased mental health of people. To tackle the problem of cyber-bullying and hate speech, the toxicity of the message being transported can be determined and used to decide whether a message is offensive or not. In case it is offensive, the user can ask his/her friends for a review to evaluate if it safe or not which can be done in the form of a voting system using decentralized application and block-chain
